@@ -1,6 +1,6 @@
 <?php
     include "koneksi.php";
-    include "mainwindow.php";
+    // include "mainwindow.php";
 
     $waktuku = date("Y-m-d H:i:s");
      
@@ -9,7 +9,6 @@
     $waktu = @$_POST['waktu'];
 
     $sql_simpan = mysqli_query($connect_db,"INSERT into mydata(nama,isi,waktu) VALUES ('$nama','$isi','$waktuku')");
-
 
     if($sql_simpan){
         // echo "data berhasil disimpan";
