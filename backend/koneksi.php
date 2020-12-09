@@ -1,8 +1,8 @@
 <?php
     $username = "root";
     $password = "";
-    $database = "feedback_demo";
-    $hostname = "192.168.43.231";
+    $database = "rplku";
+    $hostname = "127.0.0.1";
 
     $connect_db = mysqli_connect($hostname,$username,$password) or die("unable to connect") ;
 
