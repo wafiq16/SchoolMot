@@ -2,9 +2,9 @@
     include"koneksi.php";
 
     // sql to delete a record
-    $waktuku = date("d");
+    $waktuku = date("Y-m-d H:i:s");
 
-    $sql = mysqli_query($connect_db,"DELETE FROM myData WHERE waktu != '$waktuku'");
+    $sql = mysqli_query($connect_db,"DELETE FROM device WHERE waktu <= '$waktuku'");
     
     if ($sql) {
         echo "Record deleted successfully";

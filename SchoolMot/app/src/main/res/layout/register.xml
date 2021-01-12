@@ -1,83 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".registerActivity">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".registerActivity"
+    android:background="#1FFFE37F">
 
-    <EditText
-        android:id="@+id/namaSiswa"
-        android:layout_width="170dp"
-        android:layout_height="40dp"
-        android:adjustViewBounds="true"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:hint="Nama Siswa"
-        android:inputType="textPersonName"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.457"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/backButton"
+        android:onClick="buttonBack"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="38dp"
+        app:cardCornerRadius="12dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.185" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/nrpSiswa"
-        android:layout_width="170dp"
-        android:layout_height="40dp"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:hint="NRP"
-        android:inputType="textPersonName"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.365" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFE794">
 
-    <EditText
-        android:id="@+id/idAlat"
-        android:layout_width="170dp"
-        android:layout_height="40dp"
-        android:adjustViewBounds="true"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:hint="ID Alat"
-        android:inputType="textPersonName"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.548"
-        android:autofillHints="" />
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/arrow" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/buttonSubmit"
-        android:layout_width="64dp"
-        android:layout_height="30dp"
-        android:text="Submit"
-        android:textSize="8dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.886"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.701" />
+    <TextView
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/nunitosansbold"
+        android:text="@string/register_title"
+        android:textAppearance="@style/register_title"
+        app:layout_constraintStart_toEndOf="@+id/backButton"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/buttonCancel"
-        android:layout_width="64dp"
-        android:layout_height="30dp"
-        android:text="Cancel"
-        android:textSize="8dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.106"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.701" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        app:cardCornerRadius="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/backButton">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:padding="24dp">
+
+            <EditText
+                android:id="@+id/namaSiswa"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="75dp"
+                android:background="@drawable/bg_register_satu"
+                android:fontFamily="@font/nunitosansbold"
+                android:hint="Nama Siswa"
+                android:inputType="textPersonName"
+                android:paddingLeft="16dp"
+                android:textColorHint="#FFFFFF" />
+
+            <EditText
+                android:id="@+id/nrpSiswa"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="143dp"
+                android:background="@drawable/bg_register_satu"
+                android:fontFamily="@font/nunitosansbold"
+                android:hint="NRP"
+                android:inputType="textPersonName"
+                android:paddingLeft="16dp"
+                android:textColorHint="#FFFFFF" />
+
+            <EditText
+                android:id="@+id/idAlat"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="211dp"
+                android:background="@drawable/bg_register_satu"
+                android:fontFamily="@font/nunitosansbold"
+                android:hint="ID Alat"
+                android:inputType="textPersonName"
+                android:paddingLeft="16dp"
+                android:textColorHint="#FFFFFF" />
+
+            <Button
+                android:id="@+id/buttonSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="355dp"
+                android:background="@drawable/bg_button_submit"
+                android:text="@string/submit"
+                android:textAppearance="@style/submit" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

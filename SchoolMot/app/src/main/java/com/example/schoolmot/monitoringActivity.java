@@ -42,8 +42,6 @@ import java.util.HashMap;
 import java.util.Locale;
 
 public class monitoringActivity extends AppCompatActivity implements ListView.OnItemClickListener{
-    Button buttonCall;// = findViewById(R.id.buttonSubmit);
-    Button buttonCancel; // = findViewById(R.id.buttonCancel);
 
     private ListView listView;
 
@@ -55,13 +53,12 @@ public class monitoringActivity extends AppCompatActivity implements ListView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.monitoring);
+        getSupportActionBar().hide();
 
         listView = (ListView) findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
         getJSON();
 
-        buttonCall = findViewById(R.id.buttonCall);
-        buttonCancel = findViewById(R.id.buttonCancel);
 
         String[] items = new String[]{"1","2","3","4","5","6","7"};
         Clock offsetClock = Clock.offset(Clock.systemUTC(), Duration.ofHours(+7));
@@ -70,22 +67,6 @@ public class monitoringActivity extends AppCompatActivity implements ListView.On
             Instant myDate = now.minus(  3-i , ChronoUnit.DAYS);
             items [i] = myDate.toString().replaceAll("[TZ]", " ");
         }
-
-        buttonCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent activityMain = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(activityMain);
-            }
-        });
-
-        buttonCall.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                Intent activityRegister = new Intent(getApplicationContext(), registerActivity.class);
-//                startActivity(activityRegister);
-            }
-        });
 
     }
     private  void tampilkanData(){
@@ -115,9 +96,8 @@ public class monitoringActivity extends AppCompatActivity implements ListView.On
         }
         ListAdapter adapter = new SimpleAdapter(
                 monitoringActivity.this, list,R.layout.list,
-                new String[]{konfigurasi.TAG_ID,konfigurasi.TAG_NAMA,
-                konfigurasi.TAG_NRP,konfigurasi.TAG_IDALAT},
-                new int[]{R.id.idSiswa,R.id.nama,R.id.nrp,R.id.idAlatSiswa}
+                new String[]{konfigurasi.TAG_NAMA,konfigurasi.TAG_NRP},
+                new int[]{R.id.nama,R.id.nrp}
         );
         listView.setAdapter(adapter);
     }
@@ -154,5 +134,10 @@ public class monitoringActivity extends AppCompatActivity implements ListView.On
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
+    }
+
+    public void buttonBack(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

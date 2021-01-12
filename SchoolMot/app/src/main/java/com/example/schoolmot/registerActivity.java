@@ -17,7 +17,6 @@ import java.util.HashMap;
 
 public class registerActivity extends AppCompatActivity implements View.OnClickListener{
     Button toSubmit;// = findViewById(R.id.buttonSubmit);
-    Button toCancel; // = findViewById(R.id.buttonCancel);
     EditText idAlat; // =  (EditText) findViewById(R.id.idAlat);
     EditText namaSiswa; // =  (EditText) findViewById(R.id.namaSiswa);
     EditText nrpSiswa; // =  (EditText) findViewById(R.id.nrpSiswa);
@@ -25,13 +24,12 @@ public class registerActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
+        getSupportActionBar().hide();
         toSubmit = findViewById(R.id.buttonSubmit);
-        toCancel = findViewById(R.id.buttonCancel);
         idAlat =  (EditText) findViewById(R.id.idAlat);
         namaSiswa =  (EditText) findViewById(R.id.namaSiswa);
         nrpSiswa =  (EditText) findViewById(R.id.nrpSiswa);
         toSubmit.setOnClickListener(this);
-        toCancel.setOnClickListener(this);
     }
 
     private void submit() {
@@ -76,9 +74,11 @@ public class registerActivity extends AppCompatActivity implements View.OnClickL
         if(view == toSubmit){
             submit();
         }
-        if(view == toCancel){
-            startActivity(new Intent(this,MainActivity.class));
-        }
+    }
+
+    public void buttonBack(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SchoolMot</string>
+    <string name="app_name">Scheeko</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -12,4 +12,31 @@
     <string name="namaSiswa"><font size="15">Hint here!</font></string>
     <string name="nrpSiswa"><font size="15">Hint here!</font></string>
     <string name="idAlat"><font size="15">Hint here!</font></string>
+    <string name="scheeko">SCHEEKO</string>
+    <string name="school_soci">School - Social Distancing Keeper</string>
+    <string name="register">Register</string>
+    <string name="monitoring">Monitoring</string>
+    <string name="tutorialTitle">Tutorial Penggunaan Alat</string>
+    <string name="ruleTitle">Aturan Dalam Menggunaan Alat</string>
+    <string name="rules">Rules</string>
+    <string name="register_title">Register</string>
+    <string name="submit">Submit</string>
+    <string name="tutorial">Tutorial</string>
+    <string name="tutorialIsi">
+        \n
+        <li>1. Sebelum menggunakan gelang pendeteksi jarak, Gelang tersebut harus diaktifkan
+            terlebih dahulu.
+        </li>\n\n
+        <li>2. Proses pengaktifan gelang dilakukan pada aplikasi android scheeko.</li>\n\n
+        <li>3. Setelah gelang aktif, data mengenai jarak akan dikirim ke database dan pelanggar
+            dapat dilihat pada menu monitoring.
+        </li>\n\n
+    </string>
+    <string name="rule">
+        \n
+        <li>1. Alat tidak boleh terkena air</li>\n
+        <li>2. Alat tidak boleh tertindih</li>\n
+        <li>3. Alat harus berada pada jaringan wifi sekolah</li>\n\n
+    </string>
+
 </resources>

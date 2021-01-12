@@ -1,10 +1,185 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="scheeko_login">
+        <item name="android:textSize">
+            48sp
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+        <item name="android:shadowColor">
+            #40000000
+        </item>
+
+        <item name="android:shadowDx">
+            0
+        </item>
+
+        <item name="android:shadowDy">
+            4
+        </item>
+
+        <item name="android:shadowRadius">
+            4
+        </item>
+    </style>
+
+    <style name="scheeko_home">
+        <item name="android:textSize">
+            36sp
+        </item>
+        <item name="android:textColor">
+            #000000
+        </item>
+    </style>
+
+    <style name="school_soci">
+        <item name="android:textSize">
+            14sp
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+    </style>
+
+    <style name="register">
+        <item name="android:textSize">
+            16sp
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+    </style>
+
+    <style name="monitoring">
+        <item name="android:textSize">
+            16sp
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+    </style>
+
+    <style name="monitoring_title">
+        <item name="android:textSize">
+            20sp
+        </item>
+
+        <item name="fontFamily">
+            @font/nunitosansbold
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+    </style>
+
+    <style name="tutorial">
+        <item name="android:textSize">
+            16sp
+        </item>
+        <item name="fontFamily">
+            @font/nunitosansbold
+        </item>
+        <item name="android:textColor">
+            #A9A9A9
+        </item>
+    </style>
+
+    <style name="rules">
+        <item name="android:textSize">
+            16sp
+        </item>
+
+        <item name="android:textColor">
+            #A9A9A9
+        </item>
+    </style>
+
+    <style name="register_title">
+        <item name="android:textSize">
+            20sp
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+    </style>
+
+    <style name="submit">
+        <item name="android:textSize">
+            18sp
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+        <item name="fontFamily">
+            @font/nunitosansbold
+        </item>
+    </style>
+
+    <style name="list_nama">
+        <item name="android:textSize">
+            16sp
+        </item>
+
+        <item name="fontFamily">
+            @font/nunitosansbold
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+    </style>
+
+    <style name="list_nrp">
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="fontFamily">
+            @font/nunitosansregular
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+    </style>
+
+    <style name="tutorialPage">
+        <item name="android:textSize">
+            16sp
+        </item>
+        <item name="fontFamily">
+            @font/nunitosansbold
+        </item>
+        <item name="android:textColor">
+            #000000
+        </item>
+    </style>
+
+    <style name="rulesPage">
+        <item name="android:textSize">
+            16sp
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
     </style>
 
 </resources>

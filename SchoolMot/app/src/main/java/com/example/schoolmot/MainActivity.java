@@ -16,23 +16,28 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        ImageButton toRegister = findViewById(R.id.buttonRegister);
-        toRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent activityRegister = new Intent(getApplicationContext(), registerActivity.class);
-                startActivity(activityRegister);
-            }
-        });
-        ImageButton toMonitoring = findViewById(R.id.buttonMonitoring);
-        toMonitoring.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View view){
-                Intent activityMonitoring = new Intent(getApplicationContext(), monitoringActivity.class);
-                startActivity(activityMonitoring);
-            }
-        });
+        getSupportActionBar().hide();
 
     }
+
+    public void buttonRegister(View view) {
+        Intent intent = new Intent(this, registerActivity.class);
+        startActivity(intent);
+    }
+
+    public void buttonMonitoring(View view) {
+        Intent intent = new Intent(this, monitoringActivity.class);
+        startActivity(intent);
+    }
+
+    public void buttonTutorial(View view) {
+        Intent intent = new Intent(this, TutorialActivity.class);
+        startActivity(intent);
+    }
+
+    public void buttonRules(View view) {
+        Intent intent = new Intent(this, ruleActivity.class);
+        startActivity(intent);
+    }
+
 }

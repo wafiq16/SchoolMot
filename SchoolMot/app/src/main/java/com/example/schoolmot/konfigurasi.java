@@ -1,8 +1,8 @@
 package com.example.schoolmot;
 
 public class konfigurasi {
-    public static final String URL_ADD = "http://192.168.43.231/rpl/simpan.php";
-    public static final String URL_GET = "http://192.168.43.231/rpl/tampil.php";
+    public static final String URL_ADD = "https://mywebwafiq16.000webhostapp.com/rpl/simpan.php";
+    public static final String URL_GET = "https://mywebwafiq16.000webhostapp.com/rpl/tampil.php";
 
     public static final String KEY_ID = "no";
     public static final String KEY_NAMA = "nama";
