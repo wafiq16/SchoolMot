@@ -41,20 +41,19 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="40dp"
-        android:text="@string/monitoring"
+        android:text="Pelanggar"
         android:textAppearance="@style/monitoring_title"
         app:layout_constraintStart_toEndOf="@+id/backButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/myLinear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:orientation="horizontal"
         android:padding="8dp"
         app:layout_constraintTop_toBottomOf="@+id/backButton"
-        tools:layout_editor_absoluteX="-35dp">
+        tools:layout_editor_absoluteX="16dp">
 
         <ListView
             android:id="@+id/listView"
@@ -63,17 +62,5 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonShowSuspect"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="456dp"
-        android:background="@drawable/bg_button_submit"
-        android:onClick="buttonShowSuspect"
-        android:text="Pelanggar"
-        android:textAppearance="@style/submit"
-        app:layout_constraintStart_toEndOf="@+id/myLinear"
-        app:layout_constraintTop_toTopOf="@+id/myLinear" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

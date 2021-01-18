@@ -28,4 +28,17 @@
         android:layout_height="wrap_content"
         android:textAppearance="@style/list_nama"/>
 
+    <TextView
+        android:id="@+id/rssi"
+        android:text="Nama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/list_nama"/>
+
+    <TextView
+        android:id="@+id/waktu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama"
+        android:textAppearance="@style/list_nama" />
 </LinearLayout>

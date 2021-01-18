@@ -41,7 +41,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 
-public class monitoringActivity extends AppCompatActivity implements ListView.OnItemClickListener{
+public class suspectActivity extends AppCompatActivity implements ListView.OnItemClickListener {
 
     private ListView listView;
 
@@ -52,7 +52,7 @@ public class monitoringActivity extends AppCompatActivity implements ListView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.monitoring);
+        setContentView(R.layout.activity_suspect);
         getSupportActionBar().hide();
 
         listView = (ListView) findViewById(R.id.listView);
@@ -60,56 +60,61 @@ public class monitoringActivity extends AppCompatActivity implements ListView.On
         getJSON();
 
 
-        String[] items = new String[]{"1","2","3","4","5","6","7"};
+        String[] items = new String[]{"1", "2", "3", "4", "5", "6", "7"};
         Clock offsetClock = Clock.offset(Clock.systemUTC(), Duration.ofHours(+7));
         Instant now = Instant.now(offsetClock);
-        for(int i=0; i<7; i++) {
-            Instant myDate = now.minus(  3-i , ChronoUnit.DAYS);
-            items [i] = myDate.toString().replaceAll("[TZ]", " ");
+        for (int i = 0; i < 7; i++) {
+            Instant myDate = now.minus(3 - i, ChronoUnit.DAYS);
+            items[i] = myDate.toString().replaceAll("[TZ]", " ");
         }
 
     }
-    private  void tampilkanData(){
+
+    private void tampilkanData() {
         JSONObject jsonObject = null;
-        ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String, String>>();
-        try{
+        ArrayList<HashMap<String, String>> list = new ArrayList<>();
+        try {
             jsonObject = new JSONObject(JSON_STRING);
-            JSONArray result = jsonObject.getJSONArray(konfigurasi.TAG_JSON_ARRAY);
+            JSONArray result = jsonObject.getJSONArray(konfigurasi.TAG_JSON_ARRAY_SUSPECT);
 
-            for(int i=0; i<result.length(); i++){
+            for (int i = 0; i < result.length(); i++) {
                 JSONObject jo = result.getJSONObject(i);
-                String id = jo.getString(konfigurasi.TAG_ID);
-                String nama = jo.getString(konfigurasi.TAG_NAMA);
-                String nrp = jo.getString(konfigurasi.TAG_NRP);
-                String idAlat = jo.getString(konfigurasi.TAG_IDALAT);
+                String id = jo.getString(konfigurasi.TAG_ID_SUSPECT);
+                String nama = jo.getString(konfigurasi.TAG_NAMA_SUSPECT);
+                String nrp = jo.getString(konfigurasi.TAG_NRP_SUSPECT);
+                String idAlat = jo.getString(konfigurasi.TAG_IDALAT_SUSPECT);
+                String rssi = jo.getString(konfigurasi.TAG_RSSI_SUSPECT);
+                String waktu = jo.getString(konfigurasi.TAG_WAKTU_SUSPECT);
 
-                HashMap<String,String> myStudentData = new HashMap<>();
-                myStudentData.put(konfigurasi.TAG_ID,id);
-                myStudentData.put(konfigurasi.TAG_NAMA,nama);
-                myStudentData.put(konfigurasi.TAG_NRP,nrp);
-                myStudentData.put(konfigurasi.TAG_IDALAT,idAlat);
+                HashMap<String, String> myStudentData = new HashMap<>();
+                myStudentData.put(konfigurasi.TAG_ID_SUSPECT, id);
+                myStudentData.put(konfigurasi.TAG_NAMA_SUSPECT, nama);
+                myStudentData.put(konfigurasi.TAG_NRP_SUSPECT, nrp);
+                myStudentData.put(konfigurasi.TAG_IDALAT_SUSPECT, idAlat);
+                myStudentData.put(konfigurasi.TAG_RSSI_SUSPECT, rssi);
+                myStudentData.put(konfigurasi.TAG_WAKTU_SUSPECT, waktu);
                 list.add(myStudentData);
             }
-        }
-        catch (JSONException e){
+        } catch (JSONException e) {
             e.printStackTrace();
         }
         ListAdapter adapter = new SimpleAdapter(
-                monitoringActivity.this, list,R.layout.list,
-                new String[]{konfigurasi.TAG_NAMA,konfigurasi.TAG_NRP,konfigurasi.TAG_IDALAT},
-                new int[]{R.id.nama,R.id.nrp,R.id.idAlat}
+                suspectActivity.this, list, R.layout.list_suspect,
+                new String[]{konfigurasi.TAG_NAMA_SUSPECT, konfigurasi.TAG_NRP_SUSPECT, konfigurasi.TAG_IDALAT_SUSPECT, konfigurasi.TAG_RSSI_SUSPECT, konfigurasi.TAG_WAKTU_SUSPECT},
+                new int[]{R.id.nama, R.id.nrp,R.id.idAlat, R.id.rssi,R.id.waktu}
         );
         listView.setAdapter(adapter);
     }
 
-    private void getJSON(){
-        class GetJSON extends AsyncTask<Void,Void,String> {
+    private void getJSON() {
+        class GetJSON extends AsyncTask<Void, Void, String> {
 
             ProgressDialog loading;
+
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(monitoringActivity.this,"Mengambil Data","Mohon Tunggu...",false,false);
+                loading = ProgressDialog.show(suspectActivity.this, "Mengambil Data", "Mohon Tunggu...", false, false);
             }
 
             @Override
@@ -123,7 +128,7 @@ public class monitoringActivity extends AppCompatActivity implements ListView.On
             @Override
             protected String doInBackground(Void... params) {
                 RequestHandler rh = new RequestHandler();
-                String s = rh.sendGetRequest(konfigurasi.URL_GET);
+                String s = rh.sendGetRequest(konfigurasi.URL_GET_SUSPECT);
                 return s;
             }
         }
@@ -137,12 +142,7 @@ public class monitoringActivity extends AppCompatActivity implements ListView.On
     }
 
     public void buttonBack(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
-
-    public void buttonShowSuspect(View view) {
-        Intent intent = new Intent(this, suspectActivity.class);
+        Intent intent = new Intent(this, monitoringActivity.class);
         startActivity(intent);
     }
 }
